@@ -7,8 +7,8 @@ target "AGAudioPlayer" do
     platform :ios, '9.0'
 
     pod 'Interpolate'
-    pod 'BASSGaplessAudioPlayer', :git => 'https://github.com/farktronix/gapless-audio-bass-ios.git'
-    pod 'MarqueeLabel', '~> 3.0.1'
+    pod 'BASSGaplessAudioPlayer', :git => 'https://github.com/farktronix/gapless-audio-bass-ios.git', :modular_headers => false
+    pod 'MarqueeLabel', '~> 3.0.1', :modular_headers => false
     pod 'NapySlider', :git => 'https://github.com/alecgorge/NapySlider.git'
     pod 'BCColor'
     # pod 'HysteriaPlayer', :head
