@@ -111,7 +111,7 @@ import NapySlider
     
     let player: AGAudioPlayer
     
-    required public init(player: AGAudioPlayer) {
+    @objc required public init(player: AGAudioPlayer) {
         self.player = player
         
         let bundle = Bundle(path: Bundle(for: AGAudioPlayerViewController.self).path(forResource: "AGAudioPlayer", ofType: "bundle")!)
@@ -312,9 +312,6 @@ extension AGAudioPlayerViewController : AGAudioPlayerDelegate {
         
         case .queueChanged:
             uiTable.reloadData()
-            
-        default:
-            break
         }
     }
     
