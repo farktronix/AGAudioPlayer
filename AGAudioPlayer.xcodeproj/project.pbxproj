@@ -49,7 +49,8 @@
 /* Begin PBXFileReference section */
 		13AE2D5751E4226410EF7FD4 /* libPods-AGAudioPlayerOSX.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AGAudioPlayerOSX.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D67DF68517CEBB91D42D7E1 /* Pods_AGAudioPlayer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AGAudioPlayer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		2A72B9F271B1676A670BFB8D /* Pods-AGAudioPlayer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AGAudioPlayer.release.xcconfig"; path = "Pods/Target Support Files/Pods-AGAudioPlayer/Pods-AGAudioPlayer.release.xcconfig"; sourceTree = "<group>"; };
+		1DB9DB321D0E7722BDFA6879 /* Pods-AGAudioPlayer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AGAudioPlayer.release.xcconfig"; path = "Pods/Target Support Files/Pods-AGAudioPlayer/Pods-AGAudioPlayer.release.xcconfig"; sourceTree = "<group>"; };
+		47229925E6CD3F4CAB0EF921 /* Pods-AGAudioPlayer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AGAudioPlayer.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AGAudioPlayer/Pods-AGAudioPlayer.debug.xcconfig"; sourceTree = "<group>"; };
 		7C0D7BC51A44B68600607581 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		7C12F7681C493219006FA021 /* Pods-AGAudioPlayer.debug.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = "Pods-AGAudioPlayer.debug.xcconfig"; path = "Target Support Files/Pods-AGAudioPlayer/Pods-AGAudioPlayer.debug.xcconfig"; sourceTree = "<group>"; };
 		7C12F7691C493219006FA021 /* Pods-AGAudioPlayer.release.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = "Pods-AGAudioPlayer.release.xcconfig"; path = "Target Support Files/Pods-AGAudioPlayer/Pods-AGAudioPlayer.release.xcconfig"; sourceTree = "<group>"; };
@@ -83,7 +84,6 @@
 		7CC250CD1A447A98009F91C8 /* AGAudioPlayerUpNextQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AGAudioPlayerUpNextQueue.m; sourceTree = "<group>"; };
 		7CC250CF1A447AB0009F91C8 /* AGAudioItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AGAudioItem.h; sourceTree = "<group>"; };
 		7CC250D01A447AB0009F91C8 /* AGAudioItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AGAudioItem.m; sourceTree = "<group>"; };
-		9A433DBA80E778B9F8CF4663 /* Pods-AGAudioPlayer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AGAudioPlayer.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AGAudioPlayer/Pods-AGAudioPlayer.debug.xcconfig"; sourceTree = "<group>"; };
 		C122A1CA1C083B1800DE7E07 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk/System/Library/Frameworks/AVFoundation.framework; sourceTree = DEVELOPER_DIR; };
 		C1511AB11BDD9F6E003B4E6C /* AGAudioPlayerOSX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AGAudioPlayerOSX.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C1511AB31BDD9F6E003B4E6C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -121,8 +121,8 @@
 			children = (
 				7C12F7681C493219006FA021 /* Pods-AGAudioPlayer.debug.xcconfig */,
 				7C12F7691C493219006FA021 /* Pods-AGAudioPlayer.release.xcconfig */,
-				2A72B9F271B1676A670BFB8D /* Pods-AGAudioPlayer.release.xcconfig */,
-				9A433DBA80E778B9F8CF4663 /* Pods-AGAudioPlayer.debug.xcconfig */,
+				47229925E6CD3F4CAB0EF921 /* Pods-AGAudioPlayer.debug.xcconfig */,
+				1DB9DB321D0E7722BDFA6879 /* Pods-AGAudioPlayer.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -610,7 +610,7 @@
 		};
 		7CC250B81A447901009F91C8 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9A433DBA80E778B9F8CF4663 /* Pods-AGAudioPlayer.debug.xcconfig */;
+			baseConfigurationReference = 47229925E6CD3F4CAB0EF921 /* Pods-AGAudioPlayer.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -629,7 +629,7 @@
 					"\"${PODS_ROOT}/BuildHeaders\"/**",
 				);
 				INFOPLIST_FILE = "Example/Supporting Files/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				OTHER_LDFLAGS = "$(inherited)";
@@ -645,7 +645,7 @@
 		};
 		7CC250B91A447901009F91C8 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2A72B9F271B1676A670BFB8D /* Pods-AGAudioPlayer.release.xcconfig */;
+			baseConfigurationReference = 1DB9DB321D0E7722BDFA6879 /* Pods-AGAudioPlayer.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -664,7 +664,7 @@
 					"\"${PODS_ROOT}/BuildHeaders\"/**",
 				);
 				INFOPLIST_FILE = "Example/Supporting Files/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				OTHER_LDFLAGS = "$(inherited)";

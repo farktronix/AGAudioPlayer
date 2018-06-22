@@ -1,7 +1,7 @@
 PODS:
   - BASSGaplessAudioPlayer (0.0.1)
   - BCColor (0.2)
-  - Interpolate (0.4.0)
+  - Interpolate (1.0.0)
   - MarqueeLabel (3.0.5):
     - MarqueeLabel/ObjC (= 3.0.5)
   - MarqueeLabel/ObjC (3.0.5)
@@ -12,10 +12,10 @@ DEPENDENCIES:
   - BCColor
   - Interpolate
   - MarqueeLabel (~> 3.0.1)
-  - NapySlider (from `https://github.com/alecgorge/NapySlider.git`)
+  - NapySlider (from `https://github.com/farktronix/NapySlider.git`)
 
 SPEC REPOS:
-  https://github.com/CocoaPods/Specs.git:
+  https://github.com/cocoapods/specs.git:
     - BCColor
     - Interpolate
     - MarqueeLabel
@@ -24,23 +24,23 @@ EXTERNAL SOURCES:
   BASSGaplessAudioPlayer:
     :git: https://github.com/farktronix/gapless-audio-bass-ios.git
   NapySlider:
-    :git: https://github.com/alecgorge/NapySlider.git
+    :git: https://github.com/farktronix/NapySlider.git
 
 CHECKOUT OPTIONS:
   BASSGaplessAudioPlayer:
-    :commit: de94a3fb4a60dacb87bc6fecae9f30c976fa2815
+    :commit: b325279b207e1f375b51873609cfd435db8a98a7
     :git: https://github.com/farktronix/gapless-audio-bass-ios.git
   NapySlider:
-    :commit: 3d288c569474ed24e2cc652564dcf942c7b6c292
-    :git: https://github.com/alecgorge/NapySlider.git
+    :commit: 631b9d9df56729c1481affd5842253de7f7b64a2
+    :git: https://github.com/farktronix/NapySlider.git
 
 SPEC CHECKSUMS:
-  BASSGaplessAudioPlayer: 30b7984efd16d9f40ff14b9e9df3ec74a3ace4b5
+  BASSGaplessAudioPlayer: 5b074495769769192b720c70aa2a60f6f33751f3
   BCColor: 2425540cb0da92795b81a1f15b5289a92279c9eb
-  Interpolate: 682895f1a2fc091da0ba53ccb018520daf51f8fd
+  Interpolate: cd0ab81375ff3ec7d9e6023e032f4a29f53df4ad
   MarqueeLabel: 8a25b2cf02cf52165022f01369e63536c58fcc00
-  NapySlider: 6565f73f715414b44cda40ff178a319aeae38b14
+  NapySlider: add41e2bea37dee4c219fb48d4cf5000d8042d79
 
-PODFILE CHECKSUM: 6631990ef0858ef0c77306f2b9f1d36a709c43ec
+PODFILE CHECKSUM: 8146324076c189b5a6ad1ddf35a1d0b69959ca5d
 
-COCOAPODS: 1.5.0
+COCOAPODS: 1.5.3
