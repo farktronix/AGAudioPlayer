@@ -5,7 +5,7 @@ PODS:
   - MarqueeLabel (3.0.5):
     - MarqueeLabel/ObjC (= 3.0.5)
   - MarqueeLabel/ObjC (3.0.5)
-  - NapySlider (0.3)
+  - NapySlider (0.3.4)
 
 DEPENDENCIES:
   - BASSGaplessAudioPlayer (from `https://github.com/farktronix/gapless-audio-bass-ios.git`)
@@ -31,7 +31,7 @@ CHECKOUT OPTIONS:
     :commit: b325279b207e1f375b51873609cfd435db8a98a7
     :git: https://github.com/farktronix/gapless-audio-bass-ios.git
   NapySlider:
-    :commit: 631b9d9df56729c1481affd5842253de7f7b64a2
+    :commit: 29a4baa832da53593ed76bd8dac7b1b26f8962df
     :git: https://github.com/farktronix/NapySlider.git
 
 SPEC CHECKSUMS:
@@ -39,7 +39,7 @@ SPEC CHECKSUMS:
   BCColor: 2425540cb0da92795b81a1f15b5289a92279c9eb
   Interpolate: cd0ab81375ff3ec7d9e6023e032f4a29f53df4ad
   MarqueeLabel: 8a25b2cf02cf52165022f01369e63536c58fcc00
-  NapySlider: add41e2bea37dee4c219fb48d4cf5000d8042d79
+  NapySlider: cdced5cf00e407e0a5f2cb0a6ef826b329cda024
 
 PODFILE CHECKSUM: 8146324076c189b5a6ad1ddf35a1d0b69959ca5d
 
