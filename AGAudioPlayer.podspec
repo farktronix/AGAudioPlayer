@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = "AGAudioPlayer"
-  s.version          = "0.8.0"
+  s.version          = "0.8.1"
   s.summary          = "Gapless-playback + UI"
   # s.description      = <<-DESC
   #                      An optional longer description of ${POD_NAME}

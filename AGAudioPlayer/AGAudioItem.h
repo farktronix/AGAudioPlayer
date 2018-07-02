@@ -12,7 +12,7 @@
 
 @class MPMediaItemArtwork;
 
-@interface AGAudioItem : NSObject
+@interface AGAudioItem : NSObject <NSCoding>
 
 @property (nonatomic, readonly) NSUUID * _Nonnull playbackGUID;
 
