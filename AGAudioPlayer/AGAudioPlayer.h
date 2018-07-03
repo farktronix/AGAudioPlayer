@@ -33,7 +33,7 @@ typedef NS_ENUM(NSInteger, AGAudioPlayerRedrawReason) {
 
 /// all methods are always called on the main thread
 @protocol AGAudioPlayerDelegate <NSObject>
-
+@optional
 - (void)audioPlayer:(AGAudioPlayer * _Nonnull)audioPlayer
 uiNeedsRedrawForReason:(AGAudioPlayerRedrawReason)reason;
 
