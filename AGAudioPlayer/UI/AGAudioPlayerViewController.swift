@@ -119,6 +119,7 @@ public struct AGAudioPlayerColors {
     public var delegate: AGAudioPlayerViewControllerDelegate? = nil
     
     public var shouldPublishToNowPlayingCenter: Bool = true
+    private var lastNowPlayingUpdate : Date?
     
     var remoteCommandManager : RemoteCommandManager? = nil
 
@@ -392,15 +393,53 @@ extension AGAudioPlayerViewController : AGAudioPlayerDelegate {
         publishToNowPlayingCenter()
     }
     
+    private func didPlaybackStateChange(_ nowPlayingInfo : [String : Any]) -> Bool {
+        var retval = false
+        if let previousPlaybackRate = nowPlayingInfo[MPNowPlayingInfoPropertyPlaybackRate] as? Double {
+            var wasPlaying = (previousPlaybackRate == 1.0)
+            if !(wasPlaying == player.isPlaying) {
+                retval = true
+            }
+        }
+        return retval
+    }
+    
+    private func didItemIDChange(_ nowPlayingInfo : [String : Any]) -> Bool {
+        var retval = false
+        if let item = player.currentItem {
+            if let previousItemID = nowPlayingInfo[MPMediaItemPropertyPersistentID] as? Int {
+                if !(item.id == previousItemID) {
+                    retval = true
+                }
+            }
+        }
+        return retval
+    }
+    
     public func publishToNowPlayingCenter() {
         guard shouldPublishToNowPlayingCenter else {
             return
         }
         
+        // Don't send now playing updates more often than once a second, otherwise the updates might get throttled and we'll lose a play/pause state
+//        if let lastNowPlayingUpdate = lastNowPlayingUpdate {
+//            if -(lastNowPlayingUpdate.timeIntervalSince(Date())) < 1.0 {
+//                var shouldUpdateAnyway = false
+//                if let previousNowPlayingInfo = MPNowPlayingInfoCenter.default().nowPlayingInfo {
+//                    shouldUpdateAnyway = (didPlaybackStateChange(previousNowPlayingInfo) || didItemIDChange(previousNowPlayingInfo))
+//                }
+//                if !shouldUpdateAnyway {
+//                    return
+//                }
+//            }
+//        }
+        
+        var nowPlayingInfo : [String : Any]? = nil
         if let item = player.currentItem {
-            MPNowPlayingInfoCenter.default().nowPlayingInfo = [
+                nowPlayingInfo = [
                 MPMediaItemPropertyMediaType        : NSNumber(value: MPMediaType.music.rawValue),
-
+                MPMediaItemPropertyPersistentID     : item.id,
+                
                 MPMediaItemPropertyTitle            : item.title,
                 MPMediaItemPropertyAlbumArtist      : item.artist,
                 MPMediaItemPropertyArtist           : item.artist,
@@ -418,9 +457,9 @@ extension AGAudioPlayerViewController : AGAudioPlayerDelegate {
                 MPNowPlayingInfoPropertyPlaybackRate        : NSNumber(value: player.isPlaying ? 1.0 : 0.0)
             ]
         }
-        else {
-            MPNowPlayingInfoCenter.default().nowPlayingInfo = nil
-        }
+        NSLog("Updating now playing: \(nowPlayingInfo)")
+        lastNowPlayingUpdate = Date()
+        MPNowPlayingInfoCenter.default().nowPlayingInfo = nowPlayingInfo
     }
 }
 
